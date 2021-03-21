@@ -1,38 +1,140 @@
 .App {
+  width: 700px;
+  min-height: 500px;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0px hsla(110deg, 0%, 0%, 0.5), 10px 10px 0 0 var(--main-yellow), -10px -10px 0 0 var(--main-pink);
+  padding: 20px 40px;
+  position: relative;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App>h1 {
+  font-weight: bolder;
+  background: linear-gradient(0.3turn, var(--main-pink), var(--main-yellow));
+  background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App form>div {
+  margin-top: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+}
+
+.App label {
+  margin-right: 15px;
+  width: 100px;
+  text-align: right;
+}
+
+.App input,
+.App textarea {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--main-pink);
+  outline: none;
+  width: 70%;
+  font-family: inherit;
+  font-size: 0.7rem;
+}
+
+.App input[type="checkbox"] {
+  margin: 0px;
+  width: 20px;
+}
+
+.App input:focus,
+.App textarea:focus {
+  border: 1px solid var(--main-yellow);
+}
+
+.App select {
+  padding: 10px;
+  border-radius: 10px;
+  background: hsl(67, 100%, 51%);
+  appearance: none;
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.App button {
+  padding: 10px 20px;
+  background-color: black;
   color: white;
+  font-family: inherit;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow 0.3s;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.App button:hover {
+  box-shadow: 5px 5px 0 0 var(--main-pink), -5px -5px 0 0 var(--main-yellow);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App .help {
+  position: absolute;
+  right: 5%;
+  margin-left: 5px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #ff00bf;
+  line-height: 20px;
+  font-family: 'Inconsolata', monospace;
+  color: white;
+  font-size: small;
+}
+
+.App .help:hover {
+  cursor: pointer;
+}
+
+.App .help:hover .help-text {
+  display: inline;
+}
+
+.App .help .help-text {
+  display: none;
+  position: absolute;
+  left: 1.5rem;
+  font-size: 0.6rem;
+  background-color: hsl(540deg, 100%, 50%);
+  color: black;
+  padding: 10px 10px;
+  border-radius: 10px;
+  line-height: 0.7rem;
+  white-space: nowrap;
+  margin-top: -5px;
+  box-shadow: 2px 2px 2px 0 hsla(110deg, 0%, 0%, 0.5);
+  text-transform: uppercase;
+}
+
+@media(max-width: 700px) {
+  .App {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App form>div {
+    flex-direction: column;
+  }
+
+  .App label {
+    text-align: center;
   }
 }

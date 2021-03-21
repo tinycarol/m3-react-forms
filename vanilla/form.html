@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../src/index.css" />
+    <link rel="stylesheet" href="../src/App.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="App">
+      <h1>Edit user</h1>
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" value="Pepe Pérez" />
+          <div class="help">
+            i
+            <div class="help-text">User's full name</div>
+          </div>
+        </div>
+        <div>
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio">Born in 1992</textarea>
+          <div class="help">
+            i
+            <div class="help-text">User's bio</div>
+          </div>
+        </div>
+        <div>
+          <label for="private">Private profile</label>
+          <input type="checkbox" id="private" name="private" />
+          <div class="help">
+            i
+            <div class="help-text">Set profile to non public</div>
+          </div>
+        </div>
+        <div>
+          <label for="reason">Relationship status</label>
+          <select id="status" name="status">
+            <option>Single</option>
+            <option>It's complicated</option>
+            <option>Married</option>
+            <option>In a relationship</option>
+            <option>Unknown</option>
+          </select>
+          <div class="help">
+            i
+            <div class="help-text">User's relationship status</div>
+          </div>
+        </div>
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+  </body>
+</html>
