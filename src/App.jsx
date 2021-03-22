@@ -2,45 +2,87 @@ import "./App.css";
 import { Component } from "react";
 
 export default class App extends Component {
+  state = {
+    name: "Link el gato",
+    bio: "ola k ase",
+    private: true,
+    status: "single",
+  };
+
+  handleChange = (e) => {
+    let value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    this.setState({ [e.target.id]: value });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.name);
+    console.log(this.state.bio);
+    /*
+    axios.post("...", {...this.state})
+    .then()
+    */
+  }
+
   render() {
     return (
-      <div class="App">
+      <div className="App">
         <h1>Edit user</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" value="Pepe Pérez" />
-            <div class="help">
-              i<div class="help-text">User's full name</div>
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+            <div className="help">
+              i<div className="help-text">User's full name</div>
             </div>
           </div>
           <div>
-            <label for="bio">Bio</label>
-            <textarea id="bio" name="bio">
-              Born in 1992
-            </textarea>
-            <div class="help">
-              i<div class="help-text">User's bio</div>
+            <label htmlFor="bio">Bio</label>
+            <textarea
+              id="bio"
+              name="bio"
+              value={this.state.bio}
+              onChange={this.handleChange}
+            />
+            <div className="help">
+              i<div className="help-text">User's bio</div>
             </div>
           </div>
           <div>
-            <label for="private">Private profile</label>
-            <input type="checkbox" id="private" name="private" />
-            <div class="help">
-              i<div class="help-text">Set profile to non public</div>
+            <label htmlFor="private">Private profile</label>
+            <input
+              type="checkbox"
+              id="private"
+              name="private"
+              checked={this.state.private}
+              onChange={this.handleChange}
+            />
+            <div className="help">
+              i<div className="help-text">Set profile to non public</div>
             </div>
           </div>
           <div>
-            <label for="reason">Relationship status</label>
-            <select id="status" name="status">
+            <label htmlFor="reason">Relationship status</label>
+            <select
+              id="status"
+              name="status"
+              value={this.state.status}
+              onChange={this.handleChange}
+            >
               <option value="single">Single</option>
               <option value="complicated">It's complicated</option>
               <option value="married">Married</option>
               <option value="relationship">In a relationship</option>
               <option value="unknown">Unknown</option>
             </select>
-            <div class="help">
-              i<div class="help-text">User's relationship status</div>
+            <div className="help">
+              i<div className="help-text">User's relationship status</div>
             </div>
           </div>
           <button type="submit">Edit</button>

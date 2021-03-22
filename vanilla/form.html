@@ -17,7 +17,7 @@
   <body>
     <div class="App">
       <h1>Edit user</h1>
-      <form>
+      <form onsubmit="handleForm(event)">
         <div>
           <label for="name">Name</label>
           <input id="name" name="name" value="Pepe Pérez" />
@@ -60,4 +60,13 @@
       </form>
     </div>
   </body>
+    <script>
+      
+      const handleForm = (event) => {
+        event.preventDefault();
+        console.log("Enviando formulario");
+        console.log(document.getElementById("name").value);
+        console.log(document.getElementById("bio").value);
+      }
+    </script>
 </html>
